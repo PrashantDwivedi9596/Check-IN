@@ -1,0 +1,15 @@
+faster-whisper==0.9.0
+silero-vad==5.1.2
+pydub==0.25.1
+language-tool-python==2.7.1
+torch==2.0.1
+transformers==4.30.2
+numpy==1.24.3
+sounddevice==0.4.6
+scipy==1.10.1
+python-dotenv==1.0.0
+fastapi==0.100.0
+uvicorn==0.22.0
+pydantic==2.0.2
+requests==2.31.0
+python-multipart==0.0.6 

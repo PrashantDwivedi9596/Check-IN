@@ -1,0 +1,104 @@
+project_name: Check IN
+description: >
+  "Check IN" is an AI-powered classroom assistant that manages attendance through teacher voice recognition, records and summarizes lectures, allows quick voice-based note-taking, and reads text files aloud for accessibility. This project uses React.js, Spring Boot, Firebase, and Whisper.
+
+tech_stack:
+  frontend: React.js
+  backend: Java (Spring Boot)
+  database: Firebase Firestore
+  auth: Firebase Authentication
+  storage: Firebase Storage
+  ai_modules: faster-whisper (STT), silero-vad, TTS (WebSpeech API)
+
+folders:
+  - client
+  - server
+  - server/src/main/java/com/checkin
+  - server/src/main/resources
+  - client/public
+  - client/src
+  - client/src/components
+  - client/src/pages
+  - client/src/services
+  - client/src/hooks
+  - firebase
+  - ai_modules
+
+tasks:
+  - Setup Firebase project with Auth, Firestore DB, and Storage
+  - Create React frontend with login and dashboard
+  - Implement Firebase Auth (teacher, student, admin roles)
+  - Set up class & timetable selection UI for teachers
+  - Build backend in Spring Boot for attendance API endpoints
+  - Integrate Whisper STT in ai_modules (start with mock data)
+  - Enable real-time lecture listening + transcription endpoint
+  - Build attendance logic: match 'absent' after roll-call
+  - Add summary cleaning, grammar correction (via LanguageTool or transformers)
+  - Implement editable attendance UI with 15-day limit
+  - Add Quick Notes module (voice → note → save)
+  - Store and auto-delete summaries after 14 months
+  - Build TTS module to read any stored/uploaded text
+  - Add user settings for lecture control (start, pause, stop)
+  - Create Admin Panel: view stats, user roles, logs
+  - Setup environment configs, CI, and deployment steps
+
+environments:
+  - dev
+  - production
+
+dependencies:
+  frontend:
+    - react
+    - react-router-dom
+    - firebase
+    - axios
+    - tailwindcss
+    - react-speech-recognition
+    - react-speech-kit (TTS)
+  backend:
+    - spring-boot-starter-web
+    - spring-boot-starter-security
+    - spring-boot-starter-data-mongodb
+    - firebase-admin
+    - org.apache.commons
+  ai_modules:
+    - faster-whisper
+    - silero-vad
+    - pydub
+    - language-tool-python
+    - torch
+    - transformers
+
+firebase_config:
+  use_emulator: true
+  auth:
+    providers:
+      - email
+      - google
+  firestore:
+    rules: strict
+    indexes: needed
+  storage:
+    folders:
+      - lectures
+      - summaries
+      - notes
+
+ai_config:
+  use_gpu: false  # Can be enabled later for production
+  stt_model: "faster-whisper"
+  summarization: "text-based filtering + grammar correction"
+  vad: "silero-vad"
+
+deployment:
+  frontend: Firebase Hosting or Vercel
+  backend: Railway (free tier) or Fly.io
+  ai_modules: Run locally or in Google Colab (initial phase)
+
+ignore:
+  - node_modules
+  - .env
+  - .firebase
+  - /ai_modules/models
+  - /client/build
+  - /server/target
