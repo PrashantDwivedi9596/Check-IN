@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Check IN - AI-Powered Classroom Assistant
 
 Check IN is an innovative classroom management system that leverages AI to enhance the teaching and learning experience. The application provides automated attendance tracking through voice recognition, lecture recording and summarization, quick voice-based note-taking, and text-to-speech capabilities for accessibility.
@@ -105,3 +106,6 @@ Please read CONTRIBUTING.md for details on our code of conduct and the process f
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+=======
+# Check-IN
+lassroom assistant designed to automate attendance, generate clean lecture summaries, enable quick note-taking, and enhance auditory learning through text-to-speech. The system listens to the teacher's voice during class, intelligently marks attendance based on voice input (especially detecting the keyword "absent")
